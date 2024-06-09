@@ -22,10 +22,24 @@ describe("getTicketByName()", () => {
 })
 
 describe("calculateTotalFromTicketNames()", () => {
-  it("should return the total price of tickets of names on the list", () => {
+  it("should return the total price of tickets of names on the list when all names are valid", () => {
     const names = [tickets[0].name, tickets[1].name]
     const actual = calculateTotalFromTicketNames(tickets, names)
     const expected = tickets[0].priceInCents + tickets[1].priceInCents
+    expect(actual).toBe(expected)
+  })
+
+  it("should return the total price of tickets matching valid names on the list when there are invalid names on the list", () => {
+    const names = [tickets[0].name, tickets[1].name, "NONE"]
+    const actual = calculateTotalFromTicketNames(tickets, names)
+    const expected = tickets[0].priceInCents + tickets[1].priceInCents
+    expect(actual).toBe(expected)
+  })
+
+  it("should return 0 if all names on the list are invalid", () => {
+    const names = ["NOPE", "INCORRECT", "NONE"]
+    const actual = calculateTotalFromTicketNames(tickets, names)
+    const expected = 0
     expect(actual).toBe(expected)
   })
 

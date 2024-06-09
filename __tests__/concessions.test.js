@@ -29,7 +29,23 @@ describe("calculateTotalFromIDs()", () => {
     expect(actual).toBe(expected)
   })
 
+  it("should calculate the total price of valid IDs on list when there are invalid ID on the list", () => {
+    const ids = [concessions[0].id, concessions[1].id, "NONE"]
+    const actual = calculateTotalFromIDs(concessions, ids)
+    const expected = concessions[0].priceInCents + concessions[1].priceInCents
+    expect(actual).toBe(expected)
+  })
+
+  it("should return 0 if all the IDs on the list are invalid", () => {
+    const ids = ["NOPE", "INCORRECT", "NONE"]
+    const actual = calculateTotalFromIDs(concessions, ids)
+    const expected = 0
+    expect(actual).toBe(expected)
+  })
+
   it("should return 0 if list of IDs is empty", () => {
     expect(calculateTotalFromIDs(concessions, [])).toBe(0)
   })
+
+
 })
