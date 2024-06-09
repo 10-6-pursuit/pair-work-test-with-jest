@@ -5,6 +5,10 @@
  * @returns A concession object with a matching ID or `null` if no object is found.
  */
 function getConcessionByID(concessions, id) {
+  // return null
+  // return { id: "g9sZdG1hI", name: "Small Popcorn", priceInCents: 929 }
+  // return concessions.find((concession) => concession.id === id);
+  // return null
   return concessions.find((concession) => concession.id === id) || null;
 }
 
@@ -24,7 +28,6 @@ function calculateTotalFromIDs(concessions, ids) {
   }
   return total;
 }
-
 
 module.exports = {
   getConcessionByID,
