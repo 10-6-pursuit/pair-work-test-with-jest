@@ -28,3 +28,4 @@ function calculateTotalFromTicketNames(tickets, names) {
   }
   return total;
 }
+module.exports={calculateTotalFromTicketNames,getTicketByName}
