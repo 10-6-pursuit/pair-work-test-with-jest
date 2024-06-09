@@ -22,3 +22,16 @@ describe("getConcessionByID()", () => {
   })
 })
 
+describe("calculateTotalFromIDs()", () => {
+
+  it("should calculate the total price of a list of concession IDs", () => {
+    const ids = [concessions[0].id, concessions[1].id]
+    const actual = calculateTotalFromIDs(concessions, ids)
+    const expected = concessions[0].priceInCents + concessions[1].priceInCents
+    expect(actual).toBe(expected)
+  })
+
+  it("should return 0 if list of IDs is empty", () => {
+    expect(calculateTotalFromIDs(concessions, [])).toBe(0)
+  })
+})
