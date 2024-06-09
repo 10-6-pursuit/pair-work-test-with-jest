@@ -5,6 +5,9 @@
  * @returns The ticket object with a matching ID or `null` if no object is found.
  */
 function getTicketByName(tickets, name) {
+  // return null
+  // return { id: "6ha0u__54", name: "Adult Matinee", priceInCents: 949 }
+
   const result = tickets.find((ticket) => {
     return ticket.name.toLowerCase() === name.toLowerCase();
   });
@@ -19,6 +22,10 @@ function getTicketByName(tickets, name) {
  * @returns The total value of all tickets from the `names` array.
  */
 function calculateTotalFromTicketNames(tickets, names) {
+  // return null
+  // return 1788
+  // return 0
+
   let total = 0;
   for (let name of names) {
     const ticket = getTicketByName(tickets, name);
@@ -27,4 +34,9 @@ function calculateTotalFromTicketNames(tickets, names) {
     }
   }
   return total;
+}
+
+module.exports = {
+  getTicketByName,
+  calculateTotalFromTicketNames
 }

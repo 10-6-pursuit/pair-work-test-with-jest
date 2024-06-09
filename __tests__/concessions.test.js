@@ -6,7 +6,6 @@ const {
 const concessions = require('../data/concessions.js')
 
 describe("getConcessionByID()", () => {
-
   it("should return a concession object with a matching ID", () => {
     const id = concessions[0].id
     const actual = getConcessionByID(concessions, id)
@@ -23,7 +22,6 @@ describe("getConcessionByID()", () => {
 })
 
 describe("calculateTotalFromIDs()", () => {
-
   it("should calculate the total price of a list of concession IDs", () => {
     const ids = [concessions[0].id, concessions[1].id]
     const actual = calculateTotalFromIDs(concessions, ids)
