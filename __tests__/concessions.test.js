@@ -46,6 +46,4 @@ describe("calculateTotalFromIDs()", () => {
   it("should return 0 if list of IDs is empty", () => {
     expect(calculateTotalFromIDs(concessions, [])).toBe(0)
   })
-
-
 })
