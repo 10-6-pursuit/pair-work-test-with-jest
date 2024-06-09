@@ -20,3 +20,16 @@ describe("getTicketByName()", () => {
     expect(actual).toEqual(null)
   })
 })
+
+describe("calculateTotalFromTicketNames()", () => {
+  it("should return the total price of tickets of names on the list", () => {
+    const names = [tickets[0].name, tickets[1].name]
+    const actual = calculateTotalFromTicketNames(tickets, names)
+    const expected = tickets[0].priceInCents + tickets[1].priceInCents
+    expect(actual).toBe(expected)
+  })
+
+  it("should return 0 if the names list is empty", () => {
+    expect(calculateTotalFromTicketNames(tickets, [])).toBe(0)
+  })
+})

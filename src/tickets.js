@@ -22,6 +22,10 @@ function getTicketByName(tickets, name) {
  * @returns The total value of all tickets from the `names` array.
  */
 function calculateTotalFromTicketNames(tickets, names) {
+  // return null
+  // return 1788
+  // return 0
+
   let total = 0;
   for (let name of names) {
     const ticket = getTicketByName(tickets, name);
