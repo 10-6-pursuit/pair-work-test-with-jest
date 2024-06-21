@@ -8,6 +8,7 @@ function getConcessionByID(concessions, id) {
   return concessions.find((concession) => concession.id === id) || null;
 }
 
+
 /**
  * Calculates a total based on the given concession IDs.
  * @param {Object[]} concessions An array of concession objects
@@ -24,3 +25,7 @@ function calculateTotalFromIDs(concessions, ids) {
   }
   return total;
 }
+
+
+
+module.exports = { getConcessionByID, calculateTotalFromIDs }
