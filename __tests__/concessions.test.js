@@ -3,7 +3,7 @@ const  data  = require("../data/concessions");
 
 describe("getConcessionByID()", () => {
 
-    test("returns an object that match the input ID", () => {
+    test("should return an object that match the input ID", () => {
         expect(getConcessionByID(data, "g9sZdG1hI")).toEqual({ id: "g9sZdG1hI", name: "Small Popcorn", priceInCents: 929 })
     })
 
@@ -15,10 +15,19 @@ describe("getConcessionByID()", () => {
 
 describe("calculateTotalFromIDs()", () => {
 
-    const input = ["0Qs9Yp2NL", "KzWBehRAD"]
-    const actual = calculateTotalFromIDs(data, input);
-
     test("it should return a total of the sum from all prices of the provided IDs", () => {
+
+        const input = ["0Qs9Yp2NL", "KzWBehRAD"]
+        const actual = calculateTotalFromIDs(data, input);
+
         expect(actual).toEqual(1728);
     });
+    
+    test("if there's no matches with the provided ID returns 0 ", () => {
+
+        const input = ["0Qs9Yp2N", "KzWBehRA"]
+        const actual = calculateTotalFromIDs(data, input);
+
+        expect(actual).toEqual(0)
+    })
 })
