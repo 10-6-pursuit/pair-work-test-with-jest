@@ -12,6 +12,8 @@ function getTicketByName(tickets, name) {
   return result || null;
 }
 
+module.exports = { getTicketByName };
+
 /**
  * Calculates a total based on the given ticket names.
  * @param {Object[]} tickets An array of ticket objects
@@ -28,3 +30,5 @@ function calculateTotalFromTicketNames(tickets, names) {
   }
   return total;
 }
+
+module.exports = { calculateTotalFromTicketNames };
