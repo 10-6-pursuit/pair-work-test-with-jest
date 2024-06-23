@@ -1,4 +1,4 @@
-module.exports = [
+const tickets = [
   { id: "6ha0u__54", name: "Adult Matinee", priceInCents: 949 },
   { id: "dlb8ka9N_", name: "Senior Matinee", priceInCents: 839 },
   { id: "FSxeEmcoJ", name: "Child Matinee", priceInCents: 669 },
@@ -6,3 +6,5 @@ module.exports = [
   { id: "TQh2t6HWf", name: "Senior Regular", priceInCents: 1219 },
   { id: "B8v5R2nVQ", name: "Child Regular", priceInCents: 1069 },
 ];
+
+module.exports = { tickets };
